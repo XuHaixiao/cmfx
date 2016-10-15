@@ -114,7 +114,7 @@ class MenuController extends AdminbaseController {
     				$menu_name=I("post.name");
     				$mwhere=array("name"=>$name);
     				
-    				$find_rule_count=$this->auth_rule_model->where($mwhere)->count();
+    				$find_rule_count=(int)$this->auth_rule_model->where($mwhere)->count();
     				if($find_rule_count===0){
     					$this->auth_rule_model->add(array("name"=>$name,"module"=>$app,"type"=>"admin_url","title"=>$menu_name));//type 1-admin rule;2-user rule
     				}
@@ -181,7 +181,7 @@ class MenuController extends AdminbaseController {
     				$menu_name=I("post.name");
     				$mwhere=array("name"=>$name);
     				
-    				$find_rule_count=$this->auth_rule_model->where($mwhere)->count();
+    				$find_rule_count=(int)$this->auth_rule_model->where($mwhere)->count();
     				if($find_rule_count===0){
     					$this->auth_rule_model->add(array("name"=>$name,"module"=>$app,"type"=>"admin_url","title"=>$menu_name));//type 1-admin rule;2-user rule
     				}else{
