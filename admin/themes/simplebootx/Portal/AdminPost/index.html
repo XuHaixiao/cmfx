@@ -68,7 +68,7 @@
 							{$vo.post_title}
 						</notempty>
 					</td>
-					<td>{$vo.user_nicename|default=$vo.user_login}</td>
+					<td>{$vo.user_nicename|default=$vo['user_login']}</td>
 					<td>{$vo.post_hits}</td>
 					<td>
 						<notempty name="vo.comment_count">
